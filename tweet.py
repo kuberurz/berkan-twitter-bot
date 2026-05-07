@@ -9,7 +9,7 @@ def get_tweet():
         tweets = json.load(f)
     
     now = datetime.datetime.utcnow()
-    seed = f"{now.year}-{now.month}-{now.day}-{now.hour}"
+    seed = f"{now.year}-{now.month}-{now.day}-{now.hour}-{now.minute}"
     index = int(hashlib.md5(seed.encode()).hexdigest(), 16) % len(tweets)
     return tweets[index]
 
